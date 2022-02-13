@@ -1,11 +1,23 @@
 import type { NextPage } from "next";
-import { Flex, Text } from "@chakra-ui/react";
+import { Box, Divider, Flex, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
 import styles from "../styles/home.module.scss";
 
+const TravelType = ({ image, label }: { image: string; label: string }) => (
+  <VStack spacing="1.5rem">
+    <Image alt={label} width="85px" height="85px" src={image} />
+    <Text fontSize="1.5rem" lineHeight="2.25rem" fontWeight={600}>
+      {label}
+    </Text>
+  </VStack>
+);
+
 const Home: NextPage = () => {
   return (
-    <Flex>
+    <Flex flexDir="column">
+      <Flex bg="white" h="100px" justifyContent="center" alignItems="center">
+        <Image alt="logo" width="184px" height="46px" src="/logo.png" />
+      </Flex>
       <Flex
         position="relative"
         w="100%"
@@ -33,6 +45,27 @@ const Home: NextPage = () => {
           />
         </Flex>
       </Flex>
+
+      <Flex my="5rem" px="8.75rem" justify="space-between">
+        <TravelType image="/cocktail.png" label="vida noturna" />
+        <TravelType image="/surf.png" label="praia" />
+        <TravelType image="/building.png" label="moderno" />
+        <TravelType image="/museum.png" label="clássico" />
+        <TravelType image="/earth.png" label="e mais..." />
+      </Flex>
+
+      <Divider w="90px" h="1px" borderBottom="1px solid #47585B" />
+
+      <Text
+        fontSize="2.25rem"
+        lineHeight="3.375rem"
+        fontWeight={500}
+        color="47585B"
+        textAlign="center"
+      >
+        Vamos nessa? <br />
+        Então escolha seu continente
+      </Text>
     </Flex>
   );
 };
