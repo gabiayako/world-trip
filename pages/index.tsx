@@ -3,6 +3,15 @@ import { Box, Divider, Flex, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
 import styles from "../styles/home.module.scss";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+// import required modules
+import { Pagination } from "swiper";
+
 const TravelType = ({ image, label }: { image: string; label: string }) => (
   <VStack spacing="1.5rem">
     <Image alt={label} width="85px" height="85px" src={image} />
@@ -66,6 +75,21 @@ const Home: NextPage = () => {
         Vamos nessa? <br />
         Então escolha seu continente
       </Text>
+
+      <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
+        <SwiperSlide>
+          <Flex
+            bgGradient="linear(to-b, gray.900, gray.700)"
+            width="1240px"
+            height="450px"
+            backgroundPosition="center"
+            backgroundSize="cover"
+            bgImage="linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('https://bigseventravel.com/wp-content/uploads/2019/08/Screenshot-2019-08-13-at-16.38.03.png')"
+          />
+        </SwiperSlide>
+        <SwiperSlide>Slide 8</SwiperSlide>
+        <SwiperSlide>Slide 9</SwiperSlide>
+      </Swiper>
     </Flex>
   );
 };
