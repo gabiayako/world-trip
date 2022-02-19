@@ -86,6 +86,7 @@ const Home: NextPage = () => {
         navigation
         pagination={{ clickable: true }}
         style={{
+          maxWidth: "1240px",
           "--swiper-pagination-bullet-size": "16px",
           "--swiper-pagination-bullet-inactive-color": "#999999",
           "--swiper-pagination-bullet-inactive-opacity": 0.9,
@@ -97,7 +98,7 @@ const Home: NextPage = () => {
           <SwiperSlide key={name}>
             <Flex
               bgGradient="linear(to-b, gray.900, gray.700)"
-              width="1240px"
+              width="100%"
               height="450px"
               backgroundPosition="center"
               backgroundSize="cover"
