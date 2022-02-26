@@ -1,12 +1,10 @@
 import type { NextPage } from "next";
-import { Box, Divider, Flex, Text, VStack } from "@chakra-ui/react";
-import Image from "next/image";
-import styles from "../styles/home.module.scss";
+import { Divider, Flex, Text } from "@chakra-ui/react";
 
-import { Header, Banner } from "./components";
+import { Header, Banner, TravelTypes } from "./components";
 
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Navigation, Pagination, A11y } from "swiper";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -17,31 +15,12 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { useState } from "react";
 
-const TravelType = ({ image, label }: { image: string; label: string }) => (
-  <VStack spacing="1.5rem">
-    <Image alt={label} width="85px" height="85px" src={image} />
-    <Text fontSize="1.5rem" lineHeight="2.25rem" fontWeight={600}>
-      {label}
-    </Text>
-  </VStack>
-);
-
 const Home: NextPage = () => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
   return (
     <Flex flexDir="column" mb="3rem">
       <Header />
-
       <Banner />
-
-      <Flex my="5rem" px="8.75rem" justify="space-between">
-        <TravelType image="/cocktail.png" label="vida noturna" />
-        <TravelType image="/surf.png" label="praia" />
-        <TravelType image="/building.png" label="moderno" />
-        <TravelType image="/museum.png" label="clássico" />
-        <TravelType image="/earth.png" label="e mais..." />
-      </Flex>
+      <TravelTypes />
 
       <Divider w="90px" h="1px" borderBottom="1px solid #47585B" />
 

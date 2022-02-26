@@ -13,17 +13,22 @@ export const Banner = () => {
       position="relative"
       w="100%"
       direction="column"
-      px="8.75rem"
+      px={{ sm: "1rem", md: "3rem", lg: "8.75rem" }}
       pt="5rem"
       pb="4.3rem"
       backgroundPosition="top"
       backgroundSize="cover"
       backgroundImage={bgImageUri}
     >
-      <Text w="27rem" color="white" fontSize="2.25rem">
+      <Text w="27rem" color="white" fontSize={{ md: "1.75rem", lg: "2.25rem" }}>
         5 Continentes, infinitas possibilidades.
       </Text>
-      <Text w="33rem" mt="1.25rem" color="white" fontSize="1.25rem">
+      <Text
+        w={{ md: "22rem", lg: "33rem" }}
+        mt="1.25rem"
+        color="white"
+        fontSize={{ md: "1rem", lg: "1.25rem" }}
+      >
         Chegou a hora de tirar do papel a viagem que você sempre sonhou.{" "}
       </Text>
 
